@@ -1,0 +1,16 @@
+<header>
+  <%= link_to root_path, {class: "link-logo"} do %>
+    DAPHNE BAUDOUIN
+  <% end %>
+  <nav role="navigation">
+    <nav class="menu">
+      <ul>
+        <li><%= link_to "Dates", calendars_path, class:"link-menu" %></li>
+        <% @categories.each do |categorie| %>
+          <li><%= link_to categorie.name, category_path(categorie), class: "link-menu" %></li>
+        <% end %>
+        <li><%= link_to "Contact", "#", class:"link-menu" %></li>
+      </ul>
+    </nav>
+  </nav>
+</header>
