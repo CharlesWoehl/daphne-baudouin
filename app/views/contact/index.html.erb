@@ -3,7 +3,7 @@
     DAPHNE BAUDOUIN
   <% end %>
 
-    <nav role="navigation" class="menu">
+    <nav role="navigation" class="menu offmobile">
         <ul>
           <li><%= link_to "Dates", calendars_path, class:"link-menu" %></li>
           <% @categories.each do |categorie| %>
@@ -13,3 +13,10 @@
         </ul>
       </nav>
  </header>
+
+<div class="menu-listing">
+  <%= link_to "Contact", contact_index_path, class: "link-logo" %>
+  <div class="sous-menu">
+   <p>contact@</p>
+   </div>
+</div>

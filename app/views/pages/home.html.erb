@@ -1,5 +1,21 @@
-<div class="menu-listing no-border">
+<header>
+  <%= link_to root_path, {class: "link-logo"} do %>
+    DAPHNE BAUDOUIN
+  <% end %>
+
+    <nav role="navigation" class="menu">
+        <ul>
+          <li><%= link_to "Dates", calendars_path, class:"link-menu" %></li>
+          <% @categories.each do |categorie| %>
+            <li><%= link_to categorie.name, category_path(categorie), class: "link-menu" %></li>
+          <% end %>
+          <li><%= link_to "Contact", contact_index_path, class:"link-menu" %></li>
+        </ul>
+      </nav>
+ </header>
+
+ <div class="menu-listing-home">
   <div class="pic-home top-115">
-    <img src='https://res.cloudinary.com/dss64lrxx/image/upload/v1708605999/Maya-Deren-_-Baudouin-Woehl_wduruf.jpg' width="400px">
+    <img src='https://res.cloudinary.com/dss64lrxx/image/upload/v1708605999/Maya-Deren-_-Baudouin-Woehl_wduruf.jpg' width="100%">
    </div>
 </div>

@@ -1,0 +1,44 @@
+<header>
+  <%= link_to root_path, {class: "link-logo"} do %>
+    DAPHNE BAUDOUIN
+  <% end %>
+
+    <nav role="navigation" class="menu offmobile">
+        <ul>
+          <li><%= link_to "Dates", calendars_path, class:"link-menu" %></li>
+          <% @categories.each do |categorie| %>
+            <li><%= link_to categorie.name, category_path(categorie), class: "link-menu" %></li>
+          <% end %>
+          <li><%= link_to "Contact", contact_index_path, class:"link-menu" %></li>
+        </ul>
+      </nav>
+ </header>
+
+<div class="menu-listing">
+  <%= link_to @category.name, category_path(@category), class: "link-logo"   %>
+  <div class="sous-menu offmobile">
+    <ul>
+      <% @works.each do |work| %>
+        <li>
+          <%= link_to work.name, [work.category, work], class: "link-sous-menu" %>
+          <div class="year-mini"><%= work.year %></div>
+        </li>
+      <% end %>
+      <li>
+  </div>
+</div>
+<div class="bloc-work">
+  <h1>
+    <%= @work.name %>
+    <div class="year-mini"><%= @work.year %></div>
+  </h1>
+  <div class="photos">
+    <% @work.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, crop: :fill %>
+    <% end %>
+  </div>
+
+  <div class="description">
+    <%= @work.description.html_safe %>
+  </div>
+</div>

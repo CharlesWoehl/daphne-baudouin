@@ -6,6 +6,7 @@ Trestle.resource(:works) do
   table do
     column :name
     column :year
+    column :category
     actions
   end
 

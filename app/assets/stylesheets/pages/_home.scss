@@ -38,7 +38,14 @@ h1 {
 .link-logo:hover {
   border-bottom: 1px solid black;
 }
-
+.pic-home {
+  float: left;
+  margin: 0 30px 0 0;
+  width: auto;
+}
+.no-border {
+  border: none !important;
+}
 // MENU
 
 nav.menu {
@@ -66,7 +73,9 @@ nav.menu ul {
   border-bottom: 1px solid black;
 }
 .sous-menu {
-  margin-top:85px
+  margin-top:85px;
+  font-family: "arial narrow", helvetica;
+  font-weight: normal;
 }
 .sous-menu ul {
   list-style-type: none;
@@ -89,3 +98,104 @@ nav.menu ul {
 .top-115 {
   margin-top: 115px !important;
 }
+
+// MENU LISTING
+
+.menu-listing {
+  float: left;
+  width: 280px;
+  height: 100%;
+  border-left: 1px solid black;
+  padding-left: 30px;
+}
+
+.menu-listing-home {
+  float: left;
+  width: 400px;
+  height: 100%;
+  padding-left: 30px;
+}
+.year-mini {
+  font-family: "arial narrow", helvetica;
+  font-weight: normal;
+  font-size: 12px;
+  color: black;
+  text-transform: uppercase;
+  line-height: 22px;
+  display: inline;
+}
+
+// WORK
+.photos img {
+  width: 100%;
+}
+.bloc-work {
+  width: 100%;
+  position: relative;
+  float: left;
+  max-width: 600px;
+}
+.photos {
+  margin-top: 115px;
+}
+.description {
+  font-family: "arial narrow", helvetica;
+  color: black;
+  white-space: pre-line;
+  padding-bottom: 10px;
+}
+.slide {
+  display: none;
+}
+
+.slide.active {
+  display: block;
+}
+
+
+	/*Ecrans tablettes (largeur 800px Ã  1000px)*/
+
+  @media screen and (max-width: 800px) {
+    body {
+      width: 94%;
+      margin: 0;
+      padding: 3%;
+    }
+    .link-logo {
+      border-bottom: 1px solid black;
+    }
+    nav.menu {
+      margin-top: 10px;
+    }
+    .menu-listing-home {
+      width: 100%;
+      height: 100%;
+      padding-left: 0 !important;
+  }
+    .pic-home {
+      margin: 0 0 0 0;
+      width: 100%;
+    }
+    .top-115 {
+      margin-top: 45px !important;
+    }
+    .offmobile {
+      display: none;
+    }
+    .menu-listing {
+      border-left: 0;
+      padding-left: 0;
+      margin-top: 10px;
+    }
+    h1 {
+      border-left: 0 !important;
+      padding-left: 0 !important;
+      margin-top: 20px;
+    }
+    .sous-menu {
+      margin-top: 15px;
+    }
+    .photos {
+      margin-top: 70px;
+    }
+  }

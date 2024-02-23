@@ -1,0 +1,36 @@
+<header>
+  <%= link_to root_path, {class: "link-logo"} do %>
+    DAPHNE BAUDOUIN
+  <% end %>
+
+    <nav role="navigation" class="menu offmobile">
+        <ul>
+          <li><%= link_to "Dates", calendars_path, class:"link-menu" %></li>
+          <% @categories.each do |categorie| %>
+            <li><%= link_to categorie.name, category_path(categorie), class: "link-menu" %></li>
+          <% end %>
+          <li><%= link_to "Contact", contact_index_path, class:"link-menu" %></li>
+        </ul>
+      </nav>
+ </header>
+
+<div class="menu-listing">
+  <%= link_to "Dates", root_path, class: "link-logo" %>
+  <div class="sous-menu">
+    <% years = @calendars.map { |calendar| calendar.date_start.year }.uniq.sort_by { |year| -year } %>
+      <% years.each do |year| %>
+      <h3><%= year %></h3>
+      <ul>
+        <% @calendars.select { |calendar| calendar.date_start.year == year }.each do |calendar| %>
+          <li style="margin-bottom:20px">
+            <div class="year-mini"><%= l(calendar.date_start, format: :default, locale: :fr) %> - <%= l(calendar.date_end, format: :default, locale: :fr) %></div>
+            <div>
+              <span class="fst-italic"><%= calendar.name %>,</span>
+              <%= calendar.place %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+   </div>
+</div>

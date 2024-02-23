@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :works
   end
   resources :calendars
+  resources :contact, only:[:index]
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
