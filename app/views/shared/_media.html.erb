@@ -1,0 +1,7 @@
+<hr>
+<h3>Photos actuelles</h3>
+<% if model.photos.present? %>
+  <% model.photos.each do |photo| %>
+    <%= image_tag(cl_image_path(photo.key, height: 500), style: "object-fit: cover;") %>
+  <% end %>
+ <% end %>
