@@ -3,6 +3,7 @@ body {
   width: 97%;
   position: absolute;
   margin: 36px;
+  padding-bottom: 20px;
 }
 header {
   float: left;
@@ -13,10 +14,10 @@ header {
 .link-logo {
   position: relative;
   margin: 0;
-  font-family: "arial narrow", helvetica, sans-serif;
+  font-family: "Helvetica Neue", Arial, sans-serif;
   font-weight: normal;
   font-size: 20px;
-  letter-spacing: 2px;
+  // letter-spacing: 2px;
   color: black;
   text-decoration: none;
   text-transform: uppercase;
@@ -24,10 +25,10 @@ header {
 h1 {
   position: relative;
   margin: 0;
-  font-family: "arial narrow", helvetica, sans-serif;
+  font-family: "Helvetica Neue", Arial, sans-serif;
   font-weight: normal;
   font-size: 20px;
-  letter-spacing: 2px;
+  // letter-spacing: 2px;
   color: black;
   text-decoration: none;
   text-transform: uppercase;
@@ -51,7 +52,7 @@ h1 {
 nav.menu {
   margin: 85px 0 0 0;
   padding: 0;
-  font-family: "arial narrow", helvetica;
+  font-family: "Helvetica Neue", Arial, sans-serif;
   font-weight: normal;
   font-size: 20px;
   letter-spacing: 2px;
@@ -73,8 +74,8 @@ nav.menu ul {
   border-bottom: 1px solid black;
 }
 .sous-menu {
-  margin-top:85px;
-  font-family: "arial narrow", helvetica;
+  margin-top:117px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
   font-weight: normal;
 }
 .sous-menu ul {
@@ -83,7 +84,7 @@ nav.menu ul {
   padding: 0;
 }
 .link-sous-menu {
-  font-family: "arial narrow", helvetica;
+  font-family: "Helvetica Neue", Arial, sans-serif;
   font-weight: normal;
   font-size: 16px;
   letter-spacing: 1px;
@@ -96,7 +97,7 @@ nav.menu ul {
   border-bottom: 1px solid black;
 }
 .top-115 {
-  margin-top: 115px !important;
+  margin-top: 152px !important;
 }
 
 // MENU LISTING
@@ -116,7 +117,7 @@ nav.menu ul {
   padding-left: 30px;
 }
 .year-mini {
-  font-family: "arial narrow", helvetica;
+  font-family: "Helvetica Neue", Arial, sans-serif;
   font-weight: normal;
   font-size: 12px;
   color: black;
@@ -136,10 +137,10 @@ nav.menu ul {
   max-width: 600px;
 }
 .photos {
-  margin-top: 115px;
+  margin-top: 152px;
 }
 .description {
-  font-family: "arial narrow", helvetica;
+  font-family: "Helvetica Neue", Arial, sans-serif;
   color: black;
   white-space: pre-line;
   padding-bottom: 10px;
