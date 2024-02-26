@@ -54,6 +54,8 @@ gem "trestle"
 gem 'trestle-auth'
 gem "cloudinary"
 gem 'rails-i18n'
+gem 'trestle-simplemde'
+gem 'redcarpet'
 
 group :development, :test do
   gem "dotenv-rails"

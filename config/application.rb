@@ -17,6 +17,7 @@ module DaphneBaudouin
     config.before_initialize do
       config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
       config.i18n.default_locale = :fr
+      config.i18n.available_locales = [:fr, :en]
     end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1

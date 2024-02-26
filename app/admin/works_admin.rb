@@ -5,6 +5,7 @@ Trestle.resource(:works) do
 
   table do
     column :name
+    column :sous_titre
     column :year
     column :category
     actions
@@ -14,23 +15,17 @@ Trestle.resource(:works) do
     tab :infos do
       select :category_id, Category.all, { label: "Catégorie" }
       text_field :name
+      text_field :sous_titre
       number_field :year
-      text_area :description
+      editor :description
     end
-    tab :photos do
-      file_field :photos, label: 'Photos', multiple: true
-      render "shared/media", model: work
+    tab :photos, label: "Photos" do
+      col { file_field :photo, label: "Ajouter une photo",  accept: "image/*" }
+      row do
+        col do
+          render "shared/media", model: work
+        end
+      end
     end
   end
-
-  # By default, all parameters passed to the update and create actions will be
-  # permitted. If you do not have full trust in your users, you should explicitly
-  # define the list of permitted parameters.
-  #
-  # For further information, see the Rails documentation on Strong Parameters:
-  #   http://guides.rubyonrails.org/action_controller_overview.html#strong-parameters
-  #
-  # params do |params|
-  #   params.require(:work).permit(:name, ...)
-  # end
 end

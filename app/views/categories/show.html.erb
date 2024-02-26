@@ -1,18 +1,27 @@
 <header>
   <%= link_to root_path, {class: "link-logo"} do %>
-    DAPHNÉ BIIGA NWANAK <br>
-BAUDOUIN WOEHL
+    Daphné & Baudouin
   <% end %>
 
     <nav role="navigation" class="menu offmobile">
-        <ul>
-          <li><%= link_to "Dates", calendars_path, class:"link-menu" %></li>
-          <% @categories.each do |categorie| %>
-            <li><%= link_to categorie.name, category_path(categorie), class: "link-menu" %></li>
-          <% end %>
-          <li><%= link_to "Contact", contact_index_path, class:"link-menu" %></li>
-        </ul>
-      </nav>
+    <ul>
+      <% @categories.each_with_index do |categorie, index| %>
+        <% if index == 1 %>
+          <!-- Insérer le lien "Agenda" à la deuxième position -->
+          <li><%= link_to "Agenda", calendars_path, class:"link-menu" %></li>
+        <% end %>
+
+        <!-- Afficher les autres catégories -->
+        <li><%= link_to categorie.name, category_path(categorie), class: "link-menu" %></li>
+      <% end %>
+
+
+      <!-- Lien "Contact" -->
+      <li><%= link_to "A propos", a_propos_path, class:"link-menu" %></li>
+      <li><%= link_to "Contact", contact_path, class:"link-menu" %></li>
+      <li class="mt-2"; style="font-size:14px"><%= link_to "FR", url_for(locale: 'fr'), class:"link-menu"  %> | <%= link_to "EN", url_for(locale: 'en'), class:"link-menu" %></li>
+    </ul>
+  </nav>
  </header>
 
 <%= render 'shared/menu_listing' %>

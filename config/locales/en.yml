@@ -28,4 +28,19 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+# contact
+  association: "Association law 1901"
+  address: "Head office: 24 rue de Rilly la Montage 51100 REIMS"
+  siret: "Siret : 91197832800019"
+  ape: "APE : 9001Z"
+  license: "Entertainment entrepreneur license: PLATESV-D-2022-004331"
+  president: "President: Juliette Bebin"
+  conception: "Website design"
+
+# a propos
+  apropos1: |
+    Daphné Biiga Nwanak and Baudouin Woehl were born in 1991 in the East of France, but only met in 2017, at the École du Théâtre National in Strasbourg where he and she studied. After leaving school, he and she decided to continue together and founded their company in Reims in March 2020, Palabres Palabres. Although Daphné devotes most of her time to writing texts and Baudouin flourishes in musical composition, he and she share the conception, staging and interpretation of all of the projects of the company.
+  apropos2: |
+    American Reading is their first professional creation. Designed for five performers and a pianist, it deploys for the public a cinematographic device (black box, voice-over, music) from which the images would be absent, spinning the metaphor of a mirage America, at the same time dreamed space of the first migrations and land of a cinema of fantasy and exile. In a long letter addressed to the public, American Reading questions the modes of representation available to name absence, emptiness or mourning in a world of overproduction of images, of the "generalized spectacle". Scheduled at various festivals including Impatience (Le Cent-Quatre, Théâtre Louis Aragon, 2020), it was created at the Théâtre de la Cité Internationale, where Daphné and Baudouin are now associated artists (2020-2023). With the Théâtre de la Cité Internationale, the partners of this play are the Théâtre National de Strasbourg, the T2G (Gennevilliers), the Halles de Schaerbeek (Brussels) and the Watermill Center (New York). The text of American Reading is a winner of the SACD-Beaumarchais and received the encouragement of Artcena.
+  apropos3: |
+    Regarding their artistic approach, Daphné and Baudouin absolutely share the design, staging, and interpretation of the pieces they create. Both are dedicated to the creation of an interdisciplinary theater whose lightness of devices allows the deployment of their pieces in all types of space without altering them. Contemporary, their pieces are based on original texts written by Daphné from a common dramaturgy. The two questions that mark their work are as follows: The way emotions have collectively constituted over the course of History and theatrical creation as a laboratory for new relationships to images, to the visible.
