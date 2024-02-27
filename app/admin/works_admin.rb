@@ -4,8 +4,8 @@ Trestle.resource(:works) do
   end
 
   table do
-    column :name
-    column :sous_titre
+    column :name_fr
+    column :sous_titre_fr
     column :year
     column :category
     actions
@@ -14,11 +14,11 @@ Trestle.resource(:works) do
   form do |work|
     tab :infos do
       select :category_id, Category.all, { label: "Catégorie" }
-      text_field :name
-      text_field :sous_titre
+      mobility_text_field :name, locales: %w(fr en)
+      mobility_text_field :sous_titre, locales: %w[fr en]
       number_field :year
-      editor :description
-    end
+      mobility_text_area :description, locales: %w[fr en]
+     end
     tab :photos, label: "Photos" do
       col { file_field :photo, label: "Ajouter une photo",  accept: "image/*" }
       row do

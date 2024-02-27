@@ -1,3 +1,4 @@
+
 Trestle.configure do |config|
   # == Customization Options
   #
@@ -45,12 +46,12 @@ Trestle.configure do |config|
   # Set the path to consider the application root (for title links and breadcrumbs).
   # Defaults to the same value as `config.path`.
   #
-  # config.root = "/"
+  config.root = "/"
 
   # Set the initial breadcrumbs to display in the breadcrumb trail.
   # Defaults to a breadcrumb labeled 'Home' linking to to the application root.
   #
-  # config.root_breadcrumbs = -> { [Trestle::Breadcrumb.new("Home", Trestle.config.root)] }
+   config.root_breadcrumbs = -> { [Trestle::Breadcrumb.new("Home", Trestle.config.root)] }
 
   # Set the default icon class to use when it is not explicitly provided.
   # Defaults to "fa fa-arrow-circle-o-right".
@@ -200,7 +201,7 @@ Trestle.configure do |config|
   # Specify the redirect location after logging out.
   # Defaults to the trestle-auth new login path.
   #
-  # config.auth.redirect_on_logout = -> { "/" }
+  config.auth.redirect_on_logout = -> { "/" }
 
   # Enable or disable the built-in login/logout form and actions. Defaults to true.
   # You may wish to disable these if you are using a custom backend and
@@ -224,4 +225,16 @@ Trestle.configure do |config|
   # Enable or disable remember me functionality. Defaults to true.
   #
   # config.auth.remember.enabled = false
+
+  # == Mobility Options
+  #
+  # Specify the default selected locale
+  #
+  config.mobility.selected = -> { I18n.locale }
+
+
+  # Specify your DeepL Pro API key to easily translate values
+  #
+  # config.mobility.deepl_api_key = "YOUR-API-KEY"
+
 end

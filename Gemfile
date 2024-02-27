@@ -56,7 +56,8 @@ gem "cloudinary"
 gem 'rails-i18n'
 gem 'trestle-simplemde'
 gem 'redcarpet'
-
+gem 'trestle-mobility'
+gem 'mobility'
 group :development, :test do
   gem "dotenv-rails"
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

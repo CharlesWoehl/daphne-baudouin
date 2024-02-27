@@ -4,34 +4,48 @@
   <% end %>
 
     <nav role="navigation" class="menu offmobile">
-    <ul>
+  <ul>
       <% @categories.each_with_index do |categorie, index| %>
         <% if index == 1 %>
           <!-- Insérer le lien "Agenda" à la deuxième position -->
-          <li><%= link_to "Agenda", calendars_path, class:"link-menu" %></li>
+          <li><%= link_to t('lien_agenda'), calendars_path, class:"link-menu" %></li>
         <% end %>
 
         <!-- Afficher les autres catégories -->
-        <li><%= link_to categorie.name, category_path(categorie), class: "link-menu" %></li>
+
+        <% if I18n.locale == :fr %>
+          <li><%= link_to categorie.name_fr, category_path(categorie), class: "link-menu" %></li>
+        <% else %>
+          <li><%= link_to categorie.name_en, category_path(categorie), class: "link-menu" %></li>
+        <% end %>
       <% end %>
 
 
       <!-- Lien "Contact" -->
-      <li><%= link_to "A propos", a_propos_path, class:"link-menu" %></li>
-      <li><%= link_to "Contact", contact_path, class:"link-menu" %></li>
-      <li class="mt-2"; style="font-size:14px"><%= link_to "FR", url_for(locale: 'fr'), class:"link-menu"  %> | <%= link_to "EN", url_for(locale: 'en'), class:"link-menu" %></li>
+      <li><%= link_to t('lien_a_propos'), a_propos_path, class:"link-menu" %></li>
+      <li><%= link_to t('lien_contact'), contact_path, class:"link-menu" %></li>
+       <li class="mt-2"; style="font-size:14px"><%= link_to "FR", url_for(locale: 'fr'), class:"link-menu"  %> | <%= link_to "EN", url_for(locale: 'en'), class:"link-menu" %></li>
     </ul>
   </nav>
  </header>
 
 <div class="menu-listing">
-  <%= link_to @category.name, category_path(@category), class: "link-logo"   %>
+  <% if I18n.locale == :fr %>
+    <%= link_to @category.name_fr, category_path(@category), class: "link-logo" %>
+  <% else %>
+    <%= link_to @category.name_en, category_path(@category), class: "link-logo" %>
+  <% end %>
   <div class="sous-menu offmobile">
     <ul>
       <% @works.each do |work| %>
         <li>
-          <%= link_to work.name, [work.category, work], class: "link-sous-menu" %>
-          <div class="year-mini"><%= work.year %></div>
+          <% if I18n.locale == :fr %>
+            <%= link_to work.name_fr, [work.category, work], class: "link-sous-menu" %>
+          <% else %>
+            <%= link_to work.name_en, [work.category, work], class: "link-sous-menu" %>
+          <% end %>
+
+           <div class="year-mini"><%= work.year %></div>
         </li>
       <% end %>
       <li>
@@ -39,10 +53,21 @@
 </div>
 <div class="bloc-work">
   <h1>
-    <%= @work.name %>
+    <% if I18n.locale == :fr %>
+      <%= @work.name_fr %>
+    <% else %>
+      <%= @work.name_en %>
+    <% end %>
     <div class="year-mini"><%= @work.year %></div>
   </h1>
-  <h2><%= @work.sous_titre %></h2>
+  <h2>
+        <% if I18n.locale == :fr %>
+
+    <%= @work.sous_titre_fr %>
+    <% else %>
+    <%= @work.sous_titre_en %>
+    <% end %>
+    </h2>
  <% if @work.photo.key.present? %>
   <div class="photos">
     <%= cl_image_tag @work.photo.key, crop: :fill %>
@@ -51,6 +76,10 @@
   <div class="description">
     <% require 'redcarpet' %>
     <% markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML.new) %>
-    <%= markdown.render(@work.description).html_safe %> <br>
+        <% if I18n.locale == :fr %>
+    <%= markdown.render(@work.description_fr).html_safe %> <br>
+    <% else %>
+    <%= markdown.render(@work.description_en).html_safe %> <br>
+    <% end %>
   </div>
 </div>

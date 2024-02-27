@@ -4,27 +4,32 @@
   <% end %>
 
     <nav role="navigation" class="menu offmobile">
-    <ul>
+  <ul>
       <% @categories.each_with_index do |categorie, index| %>
         <% if index == 1 %>
           <!-- Insérer le lien "Agenda" à la deuxième position -->
-          <li><%= link_to "Agenda", calendars_path, class:"link-menu" %></li>
+          <li><%= link_to t('lien_agenda'), calendars_path, class:"link-menu" %></li>
         <% end %>
 
         <!-- Afficher les autres catégories -->
-        <li><%= link_to categorie.name, category_path(categorie), class: "link-menu" %></li>
+
+        <% if I18n.locale == :fr %>
+          <li><%= link_to categorie.name_fr, category_path(categorie), class: "link-menu" %></li>
+        <% else %>
+          <li><%= link_to categorie.name_en, category_path(categorie), class: "link-menu" %></li>
+        <% end %>
       <% end %>
 
 
       <!-- Lien "Contact" -->
-      <li><%= link_to "A propos", a_propos_path, class:"link-menu" %></li>
-      <li><%= link_to "Contact", contact_path, class:"link-menu" %></li>
-      <li class="mt-2"; style="font-size:14px"><%= link_to "FR", url_for(locale: 'fr'), class:"link-menu"  %> | <%= link_to "EN", url_for(locale: 'en'), class:"link-menu" %></li>
+      <li><%= link_to t('lien_a_propos'), a_propos_path, class:"link-menu" %></li>
+      <li><%= link_to t('lien_contact'), contact_path, class:"link-menu" %></li>
+       <li class="mt-2"; style="font-size:14px"><%= link_to "FR", url_for(locale: 'fr'), class:"link-menu"  %> | <%= link_to "EN", url_for(locale: 'en'), class:"link-menu" %></li>
     </ul>
   </nav>
  </header>
 <div class="menu-listing w-100 w-md-75">
-  <%= link_to "Contact", root_path, class: "link-logo" %>
+  <%= link_to t('lien_contact'), root_path, class: "link-logo" %>
   <div class="sous-menu">
   <div class="my-3">
     <h4>Daphné Biiga Nwanak &amp; Baudouin Woehl</h4>

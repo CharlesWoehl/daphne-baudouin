@@ -4,13 +4,13 @@ Trestle.resource(:categories) do
   end
 
   table do
-    column :name
+    column :name_fr
     column :order
     actions
   end
 
   form do |category|
-    text_field :name
+    mobility_text_field :name, locales: %w(fr en)
     number_field :order
   end
 end

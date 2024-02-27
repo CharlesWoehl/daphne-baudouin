@@ -1,11 +1,19 @@
 <div class="menu-listing">
-  <%= link_to @category.name,root_path, class: "link-logo"   %>
+  <% if I18n.locale == :fr %>
+    <%= link_to @category.name_fr,root_path, class: "link-logo"   %>
+  <% else %>
+    <%= link_to @category.name_en,root_path, class: "link-logo"   %>
+  <% end %>
   <div class="sous-menu">
     <ul>
       <% @works.each do |work| %>
         <li>
-          <%= link_to work.name, [work.category, work], class: "link-sous-menu" %>
-          <div class="year-mini"><%= work.year %></div>
+           <% if I18n.locale == :fr %>
+          <%= link_to work.name_fr, [work.category, work], class: "link-sous-menu" %>
+    <% else %>
+          <%= link_to work.name_en, [work.category, work], class: "link-sous-menu" %>
+    <% end %>
+           <div class="year-mini"><%= work.year %></div>
         </li>
       <% end %>
       <li>
