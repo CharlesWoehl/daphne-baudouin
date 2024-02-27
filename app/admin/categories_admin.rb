@@ -5,12 +5,10 @@ Trestle.resource(:categories) do
 
   table do
     column :name_fr
-    column :order
-    actions
+     actions
   end
 
   form do |category|
     mobility_text_field :name, locales: %w(fr en)
-    number_field :order
-  end
+   end
 end

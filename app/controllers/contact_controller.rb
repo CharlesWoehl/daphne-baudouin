@@ -1,5 +1,5 @@
 class ContactController < ApplicationController
   def index
-     @categories = Category.all.order(:order)
+     @categories = Category.all
   end
 end

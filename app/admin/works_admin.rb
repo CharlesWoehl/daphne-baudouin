@@ -13,7 +13,7 @@ Trestle.resource(:works) do
 
   form do |work|
     tab :infos do
-      select :category_id, Category.all, { label: "Catégorie" }
+      select :category_id, Category.all.map { |c| [c.name_fr, c.id] }, { label: "Catégorie" }
       mobility_text_field :name, locales: %w(fr en)
       mobility_text_field :sous_titre, locales: %w[fr en]
       number_field :year

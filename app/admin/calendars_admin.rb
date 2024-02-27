@@ -12,8 +12,8 @@ Trestle.resource(:calendars) do
   end
 
   form do |calendar|
-    text_field :name
-    select :work_id, Work.all, { label: "Oeuvre" }
+    select :work_id, Work.all.map { |work| [work.name_fr, work.id] }, { label: "Oeuvre" }
+    text_field :name, label: "Nom | Si pas d'oeuvre associée"
     row do
       col {date_field :date_start, label: "Date de début"}
       col {date_field :date_end, label: "Date de fin"}

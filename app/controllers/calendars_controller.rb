@@ -1,6 +1,6 @@
 class CalendarsController < ApplicationController
   def index
     @calendars = Calendar.all
-    @categories = Category.all.order(:order)
+    @categories = Category.all
   end
 end
