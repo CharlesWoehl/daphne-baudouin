@@ -4,8 +4,13 @@ Trestle.resource(:calendars) do
   end
 
   table do
-    column :name
-    column :work
+    column :name do |calendar|
+      if calendar.work
+        calendar.work.name_fr
+      else
+        calendar.name
+      end
+    end
     column :date_start, sort: { default_order: :desc }
     column :place
     actions
@@ -15,7 +20,7 @@ Trestle.resource(:calendars) do
     select :work_id,
     [[nil, nil]] + Work.all.map { |work| [work.name_fr, work.id] },
     { label: "Oeuvre" }
-    text_field :name, label: "Nom | Si pas d'oeuvre associée"
+    text_field :name, label: "Nom à afficher, si extrait, ..."
     row do
       col {date_field :date_start, label: "Date de début"}
       col {date_field :date_end, label: "Date de fin"}
