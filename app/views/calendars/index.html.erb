@@ -36,13 +36,21 @@
       <% years.each do |year| %>
       <h3 style="margin-top:1.5rem; font-size:1rem"><%= year %></h3>
          <% @calendars.select { |calendar| calendar.date_start.year == year }.each do |calendar| %>
-      <div class="row">
+  <div class="row">
   <% if calendar.work %>
     <div class="col-md-3 col-8">
-      <% if I18n.locale == :fr %>
-        <%= link_to calendar.work.name_fr, [calendar.work.category, calendar.work], class: "link-calendar" %>
+      <% if calendar.name.present? %>
+        <% if I18n.locale == :fr %>
+          <%= link_to calendar.name, [calendar.work.category, calendar.work], class: "link-calendar" %>
+        <% else %>
+          <%= link_to calendar.name, [calendar.work.category, calendar.work], class: "link-calendar" %>
+        <% end %>
       <% else %>
-        <%= link_to calendar.work.name_en, [calendar.work.category, calendar.work], class: "link-calendar" %>
+        <% if I18n.locale == :fr %>
+          <%= link_to calendar.work.name_fr, [calendar.work.category, calendar.work], class: "link-calendar" %>
+        <% else %>
+          <%= link_to calendar.work.name_en, [calendar.work.category, calendar.work], class: "link-calendar" %>
+        <% end %>
       <% end %>
     </div>
   <% else %>
