@@ -6,6 +6,8 @@ Rails.application.routes.draw do
       resources :works
     end
     resources :calendars
+    resources :static_pages, only: [:show]
+
     get '/a-propos', to: 'pages#a_propos', as: 'a_propos'
     get '/contact', to: 'pages#contact', as: 'contact'
     root to: "pages#home"

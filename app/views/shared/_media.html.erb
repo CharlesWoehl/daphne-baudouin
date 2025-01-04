@@ -1,5 +1,11 @@
 <hr>
 <h3>Photo actuelle</h3>
-<% if model.photo.present? %>
-  <%= cl_image_tag(model.photo.key, width: 500, style: "object-fit: cover; width:500px") %>
- <% end %>
+<% if model.photos.attached? %>
+  <div class="photos-container">
+    <% model.photos.each do |photo| %>
+      <div class="photo-preview">
+        <%= cl_image_tag(photo.key, width: 500, style: "object-fit: cover; width: 500px; margin: 10px;") %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

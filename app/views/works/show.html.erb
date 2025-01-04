@@ -21,7 +21,7 @@
 
       <!-- Lien "Contact" -->
       <li><%= link_to t('lien_a_propos'), a_propos_path, class:"link-menu" %></li>
-      <li><%= link_to t('lien_contact'), contact_path, class:"link-menu" %></li>
+      <li><%= link_to t('lien_contact'), static_page_path(1), class:"link-menu" %></li>
        <li class="mt-2"; style="font-size:14px"><%= link_to "FR", url_for(locale: 'fr'), class:"link-menu"  %> | <%= link_to "EN", url_for(locale: 'en'), class:"link-menu" %></li>
     </ul>
   </nav>
@@ -66,9 +66,14 @@
     <%= @work.sous_titre_en %>
     <% end %>
     </h2>
- <% if @work.photo.key.present? %>
+
+<% if @work.photos.attached? %>
   <div class="photos">
-    <%= cl_image_tag @work.photo.key, crop: :fill %>
+    <% @work.photos.each do |photo| %>
+      <div class="photo-item">
+        <%= cl_image_tag(photo.key, crop: :fill, width: 500, height: 300, class: "photo-preview") %>
+      </div>
+    <% end %>
   </div>
 <% end %>
   <div class="description">

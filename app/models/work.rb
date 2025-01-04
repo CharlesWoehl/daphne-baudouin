@@ -1,5 +1,5 @@
 class Work < ApplicationRecord
-  has_one_attached :photo
+  has_many_attached :photos
   belongs_to :category
   has_many :calendars
 end

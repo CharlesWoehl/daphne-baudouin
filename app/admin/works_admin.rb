@@ -18,9 +18,12 @@ Trestle.resource(:works) do
       mobility_text_field :sous_titre, locales: %w[fr en]
       number_field :year
       mobility_text_area :description, locales: %w[fr en]
-     end
+    end
+
     tab :photos, label: "Photos" do
-      col { file_field :photo, label: "Ajouter une photo",  accept: "image/*" }
+      col do
+        file_field :photos, label: "Ajouter des photos", accept: "image/*", multiple: true
+      end
       row do
         col do
           render "shared/media", model: work
