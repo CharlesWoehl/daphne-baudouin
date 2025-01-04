@@ -6,10 +6,8 @@
     <nav role="navigation" class="menu">
     <ul>
       <% @categories.each_with_index do |categorie, index| %>
-        <% if index == 1 %>
-          <!-- Insérer le lien "Agenda" à la deuxième position -->
+           <!-- Insérer le lien "Agenda" à la deuxième position -->
           <li><%= link_to "Agenda", calendars_path, class:"link-menu" %></li>
-        <% end %>
 
         <!-- Afficher les autres catégories -->
         <li><%= link_to categorie.name, category_path(categorie), class: "link-menu" %></li>
