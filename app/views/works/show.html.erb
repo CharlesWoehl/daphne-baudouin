@@ -6,10 +6,8 @@
     <nav role="navigation" class="menu offmobile">
   <ul>
       <% @categories.each_with_index do |categorie, index| %>
-        <% if index == 1 %>
-          <!-- Insérer le lien "Agenda" à la deuxième position -->
+           <!-- Insérer le lien "Agenda" à la deuxième position -->
           <li><%= link_to t('lien_agenda'), calendars_path, class:"link-menu" %></li>
-        <% end %>
 
         <!-- Afficher les autres catégories -->
 
