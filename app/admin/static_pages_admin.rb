@@ -4,7 +4,12 @@ Trestle.resource(:static_pages) do
   end
 
   form do |static_page|
+    tab :content do
        mobility_text_field :title, locales: %w(fr en)
-       mobility_text_area :content, locales: %w(fr en)
-  end
+       locales = %w(fr en) # Les langues prises en charge
+       locales.each do |locale|
+         editor :"content_#{locale}", label: "Contenu (#{locale.upcase})"
+       end
+      end
+    end
 end
