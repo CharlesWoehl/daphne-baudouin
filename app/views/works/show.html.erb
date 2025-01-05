@@ -68,14 +68,21 @@
     </h2>
 
 <% if @work.photos.attached? %>
-  <div class="photos">
-    <% @work.photos.each do |photo| %>
-      <div class="photo-item">
-        <%= cl_image_tag(photo.key, crop: :fill, width: 500, height: 300, class: "photo-preview") %>
-      </div>
-    <% end %>
+  <div class="photos-slider" data-controller="slider">
+    <button class="slider-arrow left-arrow" data-action="click->slider#previous" aria-label="Précédent">&#10094;</button>
+    <div class="slides" data-slider-target="slides">
+      <% @work.photos.each_with_index do |photo, index| %>
+        <div class="photo-item" data-index="<%= index %>">
+          <%= cl_image_tag(photo.key, crop: :fill, width: 500, height: 300, class: "photo-preview") %>
+        </div>
+      <% end %>
+    </div>
+    <button class="slider-arrow right-arrow" data-action="click->slider#next" aria-label="Suivant">&#10095;</button>
   </div>
 <% end %>
+
+
+
   <div class="description">
     <% require 'redcarpet' %>
     <% markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML.new) %>

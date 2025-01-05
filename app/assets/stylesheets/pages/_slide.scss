@@ -1,0 +1,64 @@
+/* Conteneur principal */
+.photos-slider {
+  position: relative;
+  max-width: 600px;
+  margin: auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  margin-top: 20px;
+}
+
+/* Conteneur des slides */
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+/* Chaque slide */
+.photo-item {
+  flex-shrink: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* Images */
+.photo-preview {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Flèches */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+/* Flèche au survol */
+.slider-arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Transition fluide */
+.slides {
+  transform: translateX(0);
+}
