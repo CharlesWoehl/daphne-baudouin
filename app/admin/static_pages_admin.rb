@@ -3,6 +3,13 @@ Trestle.resource(:static_pages) do
     item :static_pages, icon: "fa fa-file-alt", label: "Pages Fixes"
   end
 
+
+  table do
+    column :title_fr
+
+    actions
+  end
+
   form do |static_page|
     tab :content do
        mobility_text_field :title, locales: %w(fr en)
